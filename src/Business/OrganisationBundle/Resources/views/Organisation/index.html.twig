@@ -1,0 +1,40 @@
+{% extends 'BusinessOrganisationBundle::layout.html.twig' %}
+{% block body %}
+<h1>Liste des organisations</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Numéro Siren</th>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('organisation_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.name }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('organisation_show', { 'id': entity.id }) }}"class="btn btn-info btn-mini">afficher</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('organisation_edit', { 'id': entity.id }) }}"class="btn btn-info btn-mini">modifier</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('organisation_new') }}"class="btn btn-primary btn-small">
+            Creer une nouvelle organisation
+        </a>
+    </li>
+</ul>
+{% endblock %}

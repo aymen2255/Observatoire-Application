@@ -1,0 +1,13 @@
+{% extends 'BusinessOrganisationBundle::layout.html.twig' %}
+{% block body %}
+
+{% for key, flash in app.session.getFlashes() %}
+                <div class="errors">
+                    MESSAGE : {{ flash }}-{{key}}
+                </div>
+            {% endfor %}
+<br><br><br><br><br><br><br><br>
+<a href="{{ path('excel_upload') }}"class="btn btn-primary btn-small">
+            charger depuis un fichier excel
+        </a>
+{% endblock %}

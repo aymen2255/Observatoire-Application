@@ -1,0 +1,129 @@
+<?php
+
+namespace Business\OrganisationBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * CbyOrg
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="Business\OrganisationBundle\Entity\CbyOrgRepository")
+ */
+class CbyOrg
+{
+
+
+    /**
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Business\OrganisationBundle\Entity\Criteria")
+     */
+    private $criteria;
+
+    /**
+     * @ORM\Id
+     * @ORM\ManyToOne(targetEntity="Business\OrganisationBundle\Entity\Organisation")
+     */
+    private $organisation;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="begin_date", type="datetime")
+     */
+    private $begin_date;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="end_date", type="datetime")
+     */
+    private $end_date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="string", length=255)
+     */
+    private $value;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set begin_date
+     *
+     * @param \DateTime $beginDate
+     * @return CbyOrg
+     */
+    public function setBeginDate($beginDate)
+    {
+        $this->begin_date = $beginDate;
+    
+        return $this;
+    }
+
+    /**
+     * Get begin_date
+     *
+     * @return \DateTime 
+     */
+    public function getBeginDate()
+    {
+        return $this->begin_date;
+    }
+
+    /**
+     * Set end_date
+     *
+     * @param \DateTime $endDate
+     * @return CbyOrg
+     */
+    public function setEndDate($endDate)
+    {
+        $this->end_date = $endDate;
+    
+        return $this;
+    }
+
+    /**
+     * Get end_date
+     *
+     * @return \DateTime 
+     */
+    public function getEndDate()
+    {
+        return $this->end_date;
+    }
+
+    /**
+     * Set value
+     *
+     * @param string $value
+     * @return CbyOrg
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+    
+        return $this;
+    }
+
+    /**
+     * Get value
+     *
+     * @return string 
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+}

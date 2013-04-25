@@ -1,0 +1,30 @@
+cfamily:
+    pattern:  /
+    defaults: { _controller: "BusinessOrganisationBundle:Cfamily:index" }
+
+cfamily_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusinessOrganisationBundle:Cfamily:show" }
+
+cfamily_new:
+    pattern:  /new
+    defaults: { _controller: "BusinessOrganisationBundle:Cfamily:new" }
+
+cfamily_create:
+    pattern:  /create
+    defaults: { _controller: "BusinessOrganisationBundle:Cfamily:create" }
+    requirements: { _method: post }
+
+cfamily_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusinessOrganisationBundle:Cfamily:edit" }
+
+cfamily_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusinessOrganisationBundle:Cfamily:update" }
+    requirements: { _method: post }
+
+cfamily_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusinessOrganisationBundle:Cfamily:delete" }
+    requirements: { _method: post }

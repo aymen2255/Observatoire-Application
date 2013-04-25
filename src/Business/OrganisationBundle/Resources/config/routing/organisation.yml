@@ -1,0 +1,30 @@
+organisation:
+    pattern:  /
+    defaults: { _controller: "BusinessOrganisationBundle:Organisation:index" }
+
+organisation_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusinessOrganisationBundle:Organisation:show" }
+
+organisation_new:
+    pattern:  /new
+    defaults: { _controller: "BusinessOrganisationBundle:Organisation:new" }
+
+organisation_create:
+    pattern:  /create
+    defaults: { _controller: "BusinessOrganisationBundle:Organisation:create" }
+    requirements: { _method: post }
+
+organisation_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusinessOrganisationBundle:Organisation:edit" }
+
+organisation_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusinessOrganisationBundle:Organisation:update" }
+    requirements: { _method: post }
+
+organisation_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusinessOrganisationBundle:Organisation:delete" }
+    requirements: { _method: post }

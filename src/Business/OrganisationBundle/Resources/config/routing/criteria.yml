@@ -1,0 +1,30 @@
+criteria:
+    pattern:  /
+    defaults: { _controller: "BusinessOrganisationBundle:Criteria:index" }
+
+criteria_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BusinessOrganisationBundle:Criteria:show" }
+
+criteria_new:
+    pattern:  /new
+    defaults: { _controller: "BusinessOrganisationBundle:Criteria:new" }
+
+criteria_create:
+    pattern:  /create
+    defaults: { _controller: "BusinessOrganisationBundle:Criteria:create" }
+    requirements: { _method: post }
+
+criteria_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BusinessOrganisationBundle:Criteria:edit" }
+
+criteria_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BusinessOrganisationBundle:Criteria:update" }
+    requirements: { _method: post }
+
+criteria_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BusinessOrganisationBundle:Criteria:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,10 @@
+homepage:
+    pattern:  /
+    defaults: { _controller: BusinessOrganisationBundle:Page:index }
+excel_homepage:
+    pattern:  /excel
+    defaults: { _controller: BusinessOrganisationBundle:Excel:index }
+    
+excel_upload:
+    pattern:  /excel/upload
+    defaults: { _controller: BusinessOrganisationBundle:Excel:upload }

@@ -1,0 +1,32 @@
+{% extends 'BusinessOrganisationBundle::layout.html.twig' %}
+{% block body %}
+<h1>Organisation creation</h1>
+
+<form action="{{ path('organisation_create') }}" method="post" {{ form_enctype(form) }}>
+      {{ form_errors(form) }}
+
+      <div>
+        {{ form_label(form.id, "Numéro Siren:") }}
+        {{ form_errors(form.id) }}
+        {{ form_widget(form.id) }}
+    </div>
+      
+            <div>
+        {{ form_label(form.name, "Nom:") }}
+        {{ form_errors(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+    <p>
+        <button type="submit" class="btn btn-primary btn-small">Creer</button>
+        
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('organisation') }}">
+            liste des organisations
+        </a>
+    </li>
+</ul>
+{% endblock %}

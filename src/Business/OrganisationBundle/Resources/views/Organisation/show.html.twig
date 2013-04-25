@@ -1,0 +1,36 @@
+{% extends 'BusinessOrganisationBundle::layout.html.twig' %}
+{% block body %}
+<h1>Organisation</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Numéro Siren</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('organisation') }}">
+            liste des organisations
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('organisation_edit', { 'id': entity.id }) }}">
+            Modifier
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('organisation_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit"class="btn btn-danger btn-small">supprimer</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}
